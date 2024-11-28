@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let { onChange }: { onChange: (s: string) => void } = $props();
+	let { onChange, errors }: { onChange: (s: string) => void; errors: string[] } = $props();
 	let inputElement: HTMLInputElement;
 	let value = $state<string>('');
 
@@ -27,7 +27,15 @@
 		bind:value
 		type="text"
 		name="todoInput"
-		placeholder="Введите текст..."
+		placeholder="Enter new todo..."
 	/>
 	<button type="submit">Add Todo</button>
+
+	{#if errors.length > 0}
+		<ul>
+			{#each errors as error}
+				<li>{error}</li>
+			{/each}
+		</ul>
+	{/if}
 </form>
