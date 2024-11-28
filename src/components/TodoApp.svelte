@@ -21,8 +21,13 @@
 			todos.push(newTodo);
 		}
 	};
+
+	const removeTodo = (todoId: number) => {
+		const newTodos = todos.filter((todo) => todo.id !== todoId);
+		todos = newTodos;
+	};
 </script>
 
 <h1>Todo App</h1>
 <TodoForm onChange={addTodo} {errors} />
-<TodoList {todos} />
+<TodoList {todos} {removeTodo} />
