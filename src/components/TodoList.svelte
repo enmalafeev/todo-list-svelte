@@ -2,9 +2,9 @@
 	let { todos, removeTodo } = $props();
 </script>
 
-<ul>
+<ul role="list" class="divide-y divide-gray-100">
 	{#each todos as todo}
-		<li>
+		<li class="flex justify-between gap-x-6 py-5 text-white">
 			{todo.text}
 			<button onclick={() => removeTodo(todo.id)} class="button delete" aria-label="remove todo"
 			></button>

@@ -21,21 +21,23 @@
 	}
 </script>
 
-<form onsubmit={handleSubmit}>
+<form onsubmit={handleSubmit} class="flex">
 	<input
 		bind:this={inputElement}
 		bind:value
 		type="text"
 		name="todoInput"
+		class="input input-bordered input-primary w-full max-w-xs mr-2"
+		class:input-error={errors.length}
 		placeholder="Enter new todo..."
 	/>
-	<button type="submit">Add Todo</button>
-
-	{#if errors.length > 0}
-		<ul>
-			{#each errors as error}
-				<li>{error}</li>
-			{/each}
-		</ul>
-	{/if}
+	<button type="submit" class="btn btn-primary">Add Todo</button>
 </form>
+
+{#if errors.length > 0}
+	<ul>
+		{#each errors as error}
+			<li class="text-red-600">{error}</li>
+		{/each}
+	</ul>
+{/if}

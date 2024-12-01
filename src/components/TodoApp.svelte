@@ -28,6 +28,5 @@
 	};
 </script>
 
-<h1>Todo App</h1>
 <TodoForm onChange={addTodo} {errors} />
 <TodoList {todos} {removeTodo} />

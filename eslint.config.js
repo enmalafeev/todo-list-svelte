@@ -28,6 +28,6 @@ export default ts.config(
 		}
 	},
 	{
-		ignores: ['build/', '.svelte-kit/', 'dist/', 'postcss.config.cjs']
+		ignores: ['build/', '.svelte-kit/', 'dist/', 'postcss.config.cjs', 'tailwind.config.cjs']
 	}
 );
